@@ -1,0 +1,44 @@
+﻿<Window x:Class="ekz.Win.AddOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ekz.Win"
+        mc:Ignorable="d"
+        Title="AddOrderWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Пользователь:" Grid.Row="0"/>
+        <ComboBox x:Name="cmbUser" Grid.Row="1" DisplayMemberPath="LastName"/>
+        <TextBlock Text="Дата заказа:" Grid.Row="2"/>
+        <DatePicker x:Name="dpOrderDate" Grid.Row="3"/>
+        <TextBlock Text="Статус:" Grid.Row="4"/>
+        <ComboBox x:Name="cmbStatus" Grid.Row="5">
+            <ComboBoxItem Content="Pending"/>
+            <ComboBoxItem Content="Paid"/>
+            <ComboBoxItem Content="Shipped"/>
+            <ComboBoxItem Content="Delivered"/>
+            <ComboBoxItem Content="Cancelled"/>
+        </ComboBox>
+        <TextBlock Text="Способ оплаты:" Grid.Row="6"/>
+        <ComboBox x:Name="cmbPaymentMethod" Grid.Row="7">
+            <ComboBoxItem Content="Card"/>
+            <ComboBoxItem Content="PayPal"/>
+            <ComboBoxItem Content="CashOnDelivery"/>
+        </ComboBox>
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnSave" Content="Сохранить" Width="100" Margin="5" Click="btnSave_Click"/>
+            <Button x:Name="btnCancel" Content="Отмена" Width="100" Margin="5" Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

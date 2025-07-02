@@ -1,0 +1,35 @@
+﻿<Window x:Class="ekz.Win.OrderStatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ekz.Win"
+        mc:Ignorable="d"
+        Title="OrderStatusWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+    <TextBlock Text="Текущий статус:" Grid.Row="0"/>
+    <TextBlock x:Name="txtCurrentStatus" Grid.Row="1"/>
+
+    <TextBlock Text="Новый статус:" Grid.Row="2"/>
+    <ComboBox x:Name="cmbNewStatus" Grid.Row="3">
+        <ComboBoxItem Content="Pending"/>
+        <ComboBoxItem Content="Paid"/>
+        <ComboBoxItem Content="Shipped"/>
+        <ComboBoxItem Content="Delivered"/>
+        <ComboBoxItem Content="Cancelled"/>
+    </ComboBox>
+
+    <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+        <Button x:Name="btnSave" Content="Сохранить" Width="80" Margin="5" Click="btnSave_Click"/>
+        <Button x:Name="btnCancel" Content="Отмена" Width="80" Margin="5" Click="btnCancel_Click"/>
+    </StackPanel>
+    </Grid>
+</Window>
